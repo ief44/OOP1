@@ -1,5 +1,5 @@
 package ovChipkaart;
 
-public class Paal extends Ovchipkaart {
+public class Paal {
 
 }
