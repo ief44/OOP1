@@ -13,6 +13,9 @@ public class Ovchipkaart {
 		this.kaartnummer = kaartnummer;
 		this.saldo = 0.0;
 		this.ingecheckt = false;
-		this.vervaldatum = LocalDate.now().plusyears(5);
+		this.vervaldatum = LocalDate.now().plusYears(5);
 	}
+	public void setSaldo(double bedrag) {
+	      saldo += bedrag;
+	  }
 }
