@@ -9,4 +9,10 @@ public class Reiziger {
 	  this.kaart = kaart;
 	  this.naam = naam;
    }
+  public String getNaam() {
+	  return naam;
+  }
+  public Ovchipkaart getKaart() {
+	  return kaart;
+  }
 }

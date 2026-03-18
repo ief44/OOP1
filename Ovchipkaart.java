@@ -9,7 +9,7 @@ public class Ovchipkaart {
 	private int kaartnummer;
 	private boolean ingecheckt;
 	
-	public Ovchipkaart(int kaartnummer);{
+	public Ovchipkaart(int kaartnummer){
 		this.kaartnummer = kaartnummer;
 		this.saldo = 0.0;
 		this.ingecheckt = false;
@@ -18,4 +18,20 @@ public class Ovchipkaart {
 	public void setSaldo(double bedrag) {
 	      saldo += bedrag;
 	  }
+
+     public double getSaldo() {
+	   return saldo;
+    }
+     public boolean isIngecheckt() {
+	    return ingecheckt;
+}
+     public void setIngecheckt(boolean ingecheckt) {
+    	    this.ingecheckt = ingecheckt;
+    }
+     public int getKaartnummer() {
+    	 return kaartnummer;
+     }
+     public LocalDate getVervaldatum() {
+    	 return vervaldatum;
+     }
 }
