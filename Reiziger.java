@@ -15,4 +15,7 @@ public class Reiziger {
   public Ovchipkaart getKaart() {
 	  return kaart;
   }
+  public void checkIn(Paal paal) {
+	  paal.checkIn(kaart);
+  }
 }
