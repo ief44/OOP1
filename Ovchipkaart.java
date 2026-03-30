@@ -8,6 +8,7 @@ public class Ovchipkaart {
 	private LocalDate vervaldatum;
 	private int kaartnummer;
 	private boolean ingecheckt;
+	private Paal incheckpaal;
 	
 	public Ovchipkaart(int kaartnummer){
 		this.kaartnummer = kaartnummer;
@@ -34,4 +35,11 @@ public class Ovchipkaart {
      public LocalDate getVervaldatum() {
     	 return vervaldatum;
      }
+     public Paal getIncheckPaal() {
+    	    return getIncheckPaal();
+    	}
+
+    	public void setIncheckPaal(Paal paal) {
+    	    this.incheckpaal = paal;
+    	}   
 }
