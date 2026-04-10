@@ -18,4 +18,7 @@ public class Reiziger {
   public void checkIn(Paal paal) {
 	  paal.checkIn(kaart);
   }
+  public void checkOut (Paal paal) {
+	  paal.checkOut(kaart);
 }
+  }
