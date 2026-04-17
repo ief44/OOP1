@@ -9,8 +9,10 @@ package ovChipkaart;
           Paal paal2 = new Paal(2.0, new Locatie("Arnhem", 3.0, 3.0), 1.5);
  
           Ovchipkaart kaart = new Ovchipkaart(3528);
-          kaart.setSaldo(10);
-          OvMachine machine = new OvMachine(kaart);
+          OvMachine machine = new OvMachine();
+          machine.setKaart(kaart);
+          
+          
           Reiziger reiziger = new Reiziger(kaart, "Issam");
           Scanner scanner = new Scanner(System.in);
  
@@ -23,9 +25,11 @@ package ovChipkaart;
               keuze = scanner.nextInt();
  
               if (keuze == 1) {
+            
                   machine.toonSaldo();
               } else if (keuze == 2) {
                   System.out.println("Hoeveel wil je opladen?");
+                  
                   double bedrag = scanner.nextDouble();
                   machine.laadOp(bedrag);
               } else if (keuze == 3) {

@@ -1,48 +1,53 @@
-package ovChipkaart;                                                                                                                                                                                                              
-  import java.time.LocalDate;                                                                                                                                                                                                       
-  public class Ovchipkaart {                                                                                                                                                                                                        
+package ovChipkaart;
+ 
+  import java.time.LocalDate;
+ 
+  public class Ovchipkaart {
+
       private double saldo;
       private LocalDate vervaldatum;
       private int kaartnummer;
       private boolean ingecheckt;
-      private Paal incheckpaal;
- 
+      private Locatie incheckLocatie;
+      private double incheckTarief;
       public Ovchipkaart(int kaartnummer) {
+
           this.kaartnummer = kaartnummer;
           this.saldo = 0.0;
           this.ingecheckt = false;
           this.vervaldatum = LocalDate.now().plusYears(5);
+
       }
  
       public void setSaldo(double bedrag) {
-          saldo += bedrag;
-      }
- 
+       saldo += bedrag; }
+
       public double getSaldo() {
-          return saldo;
-      }
- 
+       return saldo; }
+
       public boolean isIngecheckt() {
-          return ingecheckt;
-      }
- 
+       return ingecheckt; }
+
       public void setIngecheckt(boolean ingecheckt) {
-          this.ingecheckt = ingecheckt;
-      }
- 
+       this.ingecheckt = ingecheckt; }
+
       public int getKaartnummer() {
-          return kaartnummer;
-      }
- 
+       return kaartnummer; }
+
       public LocalDate getVervaldatum() {
-          return vervaldatum;
-      }
- 
-      public Paal getIncheckPaal() {
-          return incheckpaal;
-      }
- 
-      public void setIncheckPaal(Paal paal) {
-          this.incheckpaal = paal;
-      }
+       return vervaldatum; }
+
+      public Locatie getIncheckLocatie() {
+       return incheckLocatie; }
+
+      public void setIncheckLocatie(Locatie locatie) {
+       this.incheckLocatie = locatie; }
+
+      public double getIncheckTarief() {
+       return incheckTarief; }
+
+      public void setIncheckTarief(double tarief){
+       this.incheckTarief = tarief; }
+
   }
+ 

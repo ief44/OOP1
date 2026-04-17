@@ -27,22 +27,19 @@ package ovChipkaart;
               return;
           }
           kaart.setIngecheckt(true);
-          kaart.setIncheckPaal(this);
+          kaart.setIncheckLocatie(this.locatie);
+          kaart.setIncheckTarief(this.instaptarief);
           kaart.setSaldo(-instaptarief);
           System.out.println("inchecken voldaan");
       }
- 
+     
       public void checkOut(Ovchipkaart kaart) {
           if (!kaart.isIngecheckt()) {
               System.out.println("Uitchecken mislukt: niet ingecheckt.");
               return;
           }
-          Paal incheckPaal = kaart.getIncheckPaal();
-          kaart.setSaldo(incheckPaal.getInstaptarief());
-          double a = this.locatie.getX() - incheckPaal.getLocatie().getX();
-          double b = this.locatie.getY() - incheckPaal.getLocatie().getY();
-          double afstand = Math.sqrt(a * a + b * b);
-          double kosten = afstand * tariefperkm;
+          kaart.setSaldo(kaart.getIncheckTarief());
+          double kosten = locatie.afstandBerekenen(kaart.getIncheckLocatie()) * tariefperkm;
           kaart.setSaldo(-kosten);
           kaart.setIngecheckt(false);
           System.out.println("Uitchecken geslaagd. Kosten: " + kosten);
