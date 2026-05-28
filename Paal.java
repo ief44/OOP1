@@ -1,7 +1,5 @@
-package ovChipkaart;
- 
-  import java.time.LocalDate;
- 
+package ovChipkaart;                                                                                                                                                                                                              
+  import java.time.LocalDate;                                                                                                                                                                                                       
   public class Paal {
       private double instaptarief;
       private Locatie locatie;
@@ -22,26 +20,25 @@ package ovChipkaart;
               System.out.println("inchecken mislukt, datum is verlopen");
               return;
           }
+          if (kaart.isIngecheckt()) {
+              System.out.println("inchecken mislukt, al ingecheckt");
+              return;
+          }
           if (kaart.getSaldo() < instaptarief) {
               System.out.println("inchecken mislukt, onvoldoende saldo");
               return;
           }
-          kaart.setIngecheckt(true);
-          kaart.setIncheckLocatie(this.locatie);
-          kaart.setIncheckTarief(this.instaptarief);
-          kaart.setSaldo(-instaptarief);
+          kaart.checkIn(this.locatie, instaptarief);
           System.out.println("inchecken voldaan");
       }
-     
+ 
       public void checkOut(Ovchipkaart kaart) {
           if (!kaart.isIngecheckt()) {
               System.out.println("Uitchecken mislukt: niet ingecheckt.");
               return;
           }
-          kaart.setSaldo(kaart.getIncheckTarief());
           double kosten = locatie.afstandBerekenen(kaart.getIncheckLocatie()) * tariefperkm;
-          kaart.setSaldo(-kosten);
-          kaart.setIngecheckt(false);
+          kaart.checkOut(kosten);
           System.out.println("Uitchecken geslaagd. Kosten: " + kosten);
       }
   }

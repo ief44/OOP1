@@ -1,7 +1,5 @@
-package ovChipkaart;
- 
-  import java.util.Scanner;
- 
+package ovChipkaart;                                                                                                                                                                                                              
+  import java.util.Scanner;                                                                                                                                                                                                         
   public class Driver {
  
       public static void main(String[] args) {
@@ -11,8 +9,7 @@ package ovChipkaart;
           Ovchipkaart kaart = new Ovchipkaart(3528);
           OvMachine machine = new OvMachine();
           machine.setKaart(kaart);
-          
-          
+ 
           Reiziger reiziger = new Reiziger(kaart, "Issam");
           Scanner scanner = new Scanner(System.in);
  
@@ -25,17 +22,17 @@ package ovChipkaart;
               keuze = scanner.nextInt();
  
               if (keuze == 1) {
-            
                   machine.toonSaldo();
               } else if (keuze == 2) {
                   System.out.println("Hoeveel wil je opladen?");
-                  
                   double bedrag = scanner.nextDouble();
                   machine.laadOp(bedrag);
               } else if (keuze == 3) {
                   System.out.println("Tot hoeveel wil je opladen?");
                   double doelbedrag = scanner.nextDouble();
                   machine.laadOpTot(doelbedrag);
+              } else if (keuze != 4) {
+                  System.out.println("Ongeldige keuze, probeer opnieuw.");
               }
           }
  
@@ -43,5 +40,7 @@ package ovChipkaart;
           System.out.println("Saldo na inchecken: " + kaart.getSaldo());
           reiziger.checkOut(paal2);
           System.out.println("Saldo na uitchecken: " + kaart.getSaldo());
+ 
+          scanner.close();
       }
   }
